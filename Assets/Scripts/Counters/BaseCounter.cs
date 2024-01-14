@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class  BaseCounter : MonoBehaviour, IKitchenObjectParent
+public class BaseCounter : MonoBehaviour, IKitchenObjectParent
 {
     [SerializeField] private Transform counterTopPoint;
     private KitchenObject kitchenObject;
@@ -14,7 +14,7 @@ public class  BaseCounter : MonoBehaviour, IKitchenObjectParent
 
     public virtual void InteractAlternate(Player player)
     {
-        Debug.LogError("No KitchenObject to interact with");
+        // Debug.LogError("No KitchenObject to interact with");
     }
 
     public void SetKitchenObject(KitchenObject kitchenObject)
