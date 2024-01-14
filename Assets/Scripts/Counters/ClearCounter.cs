@@ -19,7 +19,30 @@ public class ClearCounter : BaseCounter
         }
         else
         {
-            if (!player.HasKitchenObject())
+            if (player.HasKitchenObject())
+            {
+                // 玩家手中有盘子
+                if (player.GetKitchenObject().TryGetPlate(out PlateKitchenObject plateKitchenObject))
+                {
+                    if (plateKitchenObject.TryAddIngredient(GetKitchenObject().GetKitchenObjectSO()))
+                    {
+                        GetKitchenObject().DestroySelf();
+                    }
+                }
+                else
+                {
+                    // 玩家手中是食材
+                    if (GetKitchenObject().TryGetPlate(out plateKitchenObject))
+                    {
+                        if (plateKitchenObject.TryAddIngredient(player.GetKitchenObject().GetKitchenObjectSO()))
+                        {
+                            player.GetKitchenObject().DestroySelf();
+                        }
+                    }
+
+                }
+            }
+            else
             {
                 // 给玩家物体
                 GetKitchenObject().SetKitchenObjectParent(player);
