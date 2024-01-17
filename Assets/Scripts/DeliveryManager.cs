@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class DeliveryManger : MonoBehaviour
 {
+    public event EventHandler OnRecipeSpawned;
+    public event EventHandler OnCompleted;
 
     public static DeliveryManger Instance { get; private set; }
 
@@ -21,14 +24,15 @@ public class DeliveryManger : MonoBehaviour
     void Update()
     {
         spawnRecipeTimer -= Time.deltaTime;
-        if (spawnRecipeTimer <= 0)
+        if (spawnRecipeTimer <= 0f)
         {
             spawnRecipeTimer = spawnRecipeTimerMax;
 
-            if (waitingRecipeSOList.Count > waitingRecipeMax)
+            if (waitingRecipeSOList.Count < waitingRecipeMax)
             {
-                RecipeSO recipeSO = recipeSOList.recipeSOList[Random.Range(0, recipeSOList.recipeSOList.Count)];
+                RecipeSO recipeSO = recipeSOList.recipeSOList[UnityEngine.Random.Range(0, recipeSOList.recipeSOList.Count)];
                 waitingRecipeSOList.Add(recipeSO);
+                OnRecipeSpawned?.Invoke(this, EventArgs.Empty);
             }
         }
     }
@@ -67,10 +71,15 @@ public class DeliveryManger : MonoBehaviour
             if (plateContentMatchesRecipe)
             {
                 waitingRecipeSOList.RemoveAt(i);
+                OnCompleted?.Invoke(this, EventArgs.Empty);
                 return;
             } else {
                 // 交付错误
             }
         }
+    }
+
+    public List<RecipeSO> GetWaitingRecipeSOList() {
+        return waitingRecipeSOList;
     }
 }
