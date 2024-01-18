@@ -92,10 +92,12 @@
     <Compile Include="Assets/PlayerInputActions.cs" />
     <Compile Include="Assets/Scripts/Counters/PlatesCounter.cs" />
     <Compile Include="Assets/Scripts/GameInput.cs" />
+    <Compile Include="Assets/Scripts/SoundManager.cs" />
     <Compile Include="Assets/Scripts/KitchenObject.cs" />
     <Compile Include="Assets/Scripts/DeliveryManager.cs" />
     <Compile Include="Assets/Scripts/Counters/PlatesCounterVisual.cs" />
     <Compile Include="Assets/Scripts/UI/PlateIconSingleUI.cs" />
+    <Compile Include="Assets/Scripts/ScriptableObjects/AudioClipRefsSO.cs" />
     <Compile Include="Assets/Scripts/ScriptableObjects/RecipeSO.cs" />
     <Compile Include="Assets/Scripts/Counters/CuttingCounterVisual.cs" />
     <Compile Include="Assets/Scripts/UI/DeliveryManagerUI.cs" />
