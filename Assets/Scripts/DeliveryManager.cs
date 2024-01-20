@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using UnityEngine;
 
 public class DeliveryManger : MonoBehaviour
@@ -17,6 +18,7 @@ public class DeliveryManger : MonoBehaviour
     private float spawnRecipeTimer;
     private float spawnRecipeTimerMax = 4f;
     private int waitingRecipeMax = 4;
+    private int successfulRecipesAmount = 0;
 
     void Awake()
     {
@@ -73,6 +75,7 @@ public class DeliveryManger : MonoBehaviour
             if (plateContentMatchesRecipe)
             {
                 waitingRecipeSOList.RemoveAt(i);
+                successfulRecipesAmount++;
                 OnCompleted?.Invoke(this, EventArgs.Empty);
                 OnRecipeSuccess?.Invoke(this, EventArgs.Empty);
                 return;
@@ -85,5 +88,9 @@ public class DeliveryManger : MonoBehaviour
 
     public List<RecipeSO> GetWaitingRecipeSOList() {
         return waitingRecipeSOList;
+    }
+
+    public int GetSuccessfulRecipesAmount() {
+        return successfulRecipesAmount;
     }
 }

@@ -102,6 +102,7 @@
     <Compile Include="Assets/Scripts/ScriptableObjects/AudioClipRefsSO.cs" />
     <Compile Include="Assets/Scripts/PlayerSound.cs" />
     <Compile Include="Assets/Scripts/ScriptableObjects/RecipeSO.cs" />
+    <Compile Include="Assets/Scripts/UI/GameOverUI.cs" />
     <Compile Include="Assets/Scripts/Counters/CuttingCounterVisual.cs" />
     <Compile Include="Assets/Scripts/UI/DeliveryManagerUI.cs" />
     <Compile Include="Assets/Scripts/UI/GameStartCoutdownUI.cs" />
