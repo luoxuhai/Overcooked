@@ -64,12 +64,15 @@
     <Analyzer Include="/Users/luoxuhai/Unity/2022.3.16f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets/Scripts/UI/MainMenuUI.cs" />
     <Compile Include="Assets/Scripts/Counters/DeliveryCounter.cs" />
     <Compile Include="Assets/Scripts/UI/DeliveryManagerSingleUI.cs" />
     <Compile Include="Assets/Scripts/Counters/BaseCounter.cs" />
     <Compile Include="Assets/Scripts/Counters/ContainerCounterVisual.cs" />
     <Compile Include="Assets/Scripts/ScriptableObjects/CuttingRecipeSO.cs" />
     <Compile Include="Assets/Scripts/RecipeListSO.cs" />
+    <Compile Include="Assets/Scripts/UI/GamePalyingClockUI.cs" />
+    <Compile Include="Assets/Scripts/LoaderCallback.cs" />
     <Compile Include="Assets/Scripts/IHasProgress.cs" />
     <Compile Include="Assets/Scripts/Counters/TrashCounter.cs" />
     <Compile Include="Assets/Scripts/Counters/SelectedCounterVisual.cs" />
@@ -81,6 +84,7 @@
     <Compile Include="Assets/Scripts/PlateCompleteVisual.cs" />
     <Compile Include="Assets/TutorialInfo/Scripts/Readme.cs" />
     <Compile Include="Assets/Scripts/ScriptableObjects/KitchenObjectSO.cs" />
+    <Compile Include="Assets/Scripts/Loader.cs" />
     <Compile Include="Assets/Scripts/Counters/StoveCounter.cs" />
     <Compile Include="Assets/Scripts/Counters/StoveCounterSound.cs" />
     <Compile Include="Assets/Scripts/Player.cs" />
